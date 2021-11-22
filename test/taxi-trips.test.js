@@ -57,16 +57,14 @@ describe('Taxi Trips', function () {
         await taxiTrips.findTaxisForRegion("Gauteng");
 
         assert.deepEqual([{
-            "id": 11,
             "reg_number": "NUZ 654-098",
             "region_name": "Durban"
         },
         {
-            "id": 12,
             "reg_number": "NU 687-008",
             "region_name": "Durban"
         }]
-            , await taxiTrips.findTaxisForRegion("Durban"));
+            , results);
 
         assert.deepEqual([{ id: 8, reg_number: "CA 123-09", region_name: "Cape Town" },
         { id: 9, reg_number: "CY 186-076", region_name: "Cape Town" }, { id: 10, reg_number: "CA 199-999", region_name: 'Cape Town' }], await taxiTrips.findTaxisForRegion('Cape Town'));
