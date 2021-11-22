@@ -23,7 +23,7 @@ module.exports = function TaxiTrips(pool) {
 
     async function findAllRegions() {
         //console.log(await pool.query('select * from region'));
-        var allRegions = await pool.query('select * from region');
+        var allRegions = await pool.query("select * from region");
         return allRegions.rows
     };
 

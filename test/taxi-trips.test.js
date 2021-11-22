@@ -33,9 +33,18 @@ describe('Taxi Trips', function () {
 
         await taxiTrips.findAllRegions();
 
-        assert.deepEqual([{ id: 1, name: "Durban" },
-        { id: 2, name: "Cape Town" },
-        { id: 3, name: "Gauteng" }]
+        assert.deepEqual([{
+            "id": 1,
+            "name": "Durban"
+        },
+        {
+            "id": 2,
+            "name": "Cape Town"
+        },
+        {
+            "id": 3,
+            "name": "Gauteng"
+        }]
             , await taxiTrips.findAllRegions());
 
     });
@@ -47,15 +56,23 @@ describe('Taxi Trips', function () {
         await taxiTrips.findTaxisForRegion("Cape Town");
         await taxiTrips.findTaxisForRegion("Gauteng");
 
-        assert.deepEqual([{ id: 11, reg_number: "NUZ 654-098", region_name: "Durban" },
-        { id: 12, reg_number: "NU 687-008", region_name: "Durban" }]
+        assert.deepEqual([{
+            "id": 11,
+            "reg_number": "NUZ 654-098",
+            "region_name": "Durban"
+        },
+        {
+            "id": 12,
+            "reg_number": "NU 687-008",
+            "region_name": "Durban"
+        }]
             , await taxiTrips.findTaxisForRegion("Durban"));
 
         assert.deepEqual([{ id: 8, reg_number: "CA 123-09", region_name: "Cape Town" },
         { id: 9, reg_number: "CY 186-076", region_name: "Cape Town" }, { id: 10, reg_number: "CA 199-999", region_name: 'Cape Town' }], await taxiTrips.findTaxisForRegion('Cape Town'));
 
         assert.deepEqual([{ id: 13, reg_number: "GP 674-090", region_name: "Gauteng" },
-            { id: 14, reg_number: "GP 777-888", region_name: "Gauteng" }], await taxiTrips.findTaxisForRegion('Gauteng'));
+        { id: 14, reg_number: "GP 777-888", region_name: "Gauteng" }], await taxiTrips.findTaxisForRegion('Gauteng'));
 
     })
 
